@@ -24,8 +24,8 @@ make clean && make clobber
 
 # Set CCACHE
 export USE_CCACHE=1
-export CCACHE_DIR=/home/university/ccache/aex
-prebuilts/misc/linux-x86/ccache/ccache -M 80G
+export CCACHE_DIR=/home/carlos/ccache/rom_name
+prebuilts/misc/linux-x86/ccache/ccache -M 50G
 
 # Check the starting time (of the real build process)
 TIME_START=$(date +%s.%N)
@@ -37,7 +37,7 @@ echo -e ""
 # Compile the build
 . build/envsetup.sh
 lunch lineage_$device-userdebug
-make bacon -j4
+make bacon -j8
 
 # Check the finishing time
 TIME_END=$(date +%s.%N)
