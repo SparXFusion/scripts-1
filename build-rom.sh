@@ -2,25 +2,28 @@
 #
 # Copyright (C) 2018 Carlos Arriaga <carlosarriagacm@gmail.com>
 #
-# Usage: ./build-rom.sh <DEVICE>
+# Usage: ./build-rom.sh
 #
+rom=aoscp
+username=prada
 
-device="$1"
+# Colors makes things beautiful
+red=$(tput setaf 1)             #  red
+grn=$(tput setaf 2)             #  green
+blu=$(tput setaf 4)             #  blue
+cya=$(tput setaf 6)             #  cyan
+txtrst=$(tput sgr0)             #  Reset
 
-# idk only exports
-export KBUILD_BUILD_USER="TheStrechh"
-export KBUILD_BUILD_HOST="legacyhost"
-export ALLOW_MISSING_DEPENDENCIES=true
-
-# Make a clean build
-make clean && make clobber
-
-# Set CCACHE
+# CCACHE UMMM!!! Cooks my builds fast
+echo -e ${blu}"CCACHE is enabled for this build"${txtrst}
 export USE_CCACHE=1
-export CCACHE_DIR=/home/carlos/ccache/rom_name
+export CCACHE_DIR=/home/$username/ccache/$rom
 prebuilts/misc/linux-x86/ccache/ccache -M 50G
 
-# Compile the build
+# Clean build
+make clean && make clobber
+
+# Build ROM
 . build/envsetup.sh
-lunch lineage_$device-userdebug
-time mka bacon -j8
+lunch $rom_kenzo-userdebug
+make bacon -j8
