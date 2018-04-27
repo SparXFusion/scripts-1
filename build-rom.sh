@@ -4,8 +4,8 @@
 #
 # Usage: ./build-rom.sh
 #
-rom=aoscp
-username=prada
+rom=lineage # The rom name
+username=prada # Your user name
 
 # Colors makes things beautiful
 red=$(tput setaf 1)             #  red
@@ -25,5 +25,5 @@ make clean && make clobber
 
 # Build ROM
 . build/envsetup.sh
-lunch $rom_kenzo-userdebug
+lunch lineage_kenzo-userdebug
 make bacon -j8
