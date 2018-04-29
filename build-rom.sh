@@ -7,6 +7,11 @@
 rom=lineage # The rom name
 username=prada # Your user name
 
+# Export idk
+export KBUILD_BUILD_USER="TheStrechh"
+export KBUILD_BUILD_HOST="legacyhost"
+export ALLOW_MISSING_DEPENDENCIES=true
+
 # CCACHE UMMM!!! Cooks my builds fast
 echo -e "CCACHE is enabled for this build"
 export USE_CCACHE=1
