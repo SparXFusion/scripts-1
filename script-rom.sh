@@ -1,8 +1,6 @@
 #!/bin/bash
 #
-# Copyright (C) 2018 Carlos Arriaga <carlosarriagacm@gmail.com>
-#
-# Usage: ./build-rom.sh
+# Copyright (C) 2019 Carlos Arriaga <carlosarriagacm@gmail.com>
 #
 
 # Export idk
@@ -13,7 +11,7 @@ export ALLOW_MISSING_DEPENDENCIES=true
 # CCACHE UMMM!!! Cooks my builds fast
 echo -e "CCACHE is enabled for this build"
 export USE_CCACHE=1
-export CCACHE_DIR=/root/ccache/du
+export CCACHE_DIR=/root/ccache
 prebuilts/misc/linux-x86/ccache/ccache -M 50G
 
 # Clean build
