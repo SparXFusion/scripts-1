@@ -4,8 +4,8 @@
 #
 
 # Export idk
-export KBUILD_BUILD_USER="TheStrechh"
-export KBUILD_BUILD_HOST="legacyhost"
+export KBUILD_BUILD_USER="Sonic-sakthivel123"
+export KBUILD_BUILD_HOST="SparXFusion"
 export ALLOW_MISSING_DEPENDENCIES=true
 
 # CCACHE UMMM!!! Cooks my builds fast
@@ -21,5 +21,5 @@ make clean && make clobber
 # Build ROM
 echo -e "BUILDING ROM :D"
 . build/envsetup.sh
-lunch lineage_lavender-userdebug
+lunch aosp_i9300-userdebug
 make bacon -j8
