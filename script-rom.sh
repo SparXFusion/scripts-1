@@ -22,4 +22,4 @@ make clean && make clobber
 echo -e "BUILDING ROM :D"
 . build/envsetup.sh
 lunch aosp_i9300-userdebug
-make bacon -j8
+make bacon 
